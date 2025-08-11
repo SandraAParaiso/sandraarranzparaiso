@@ -668,7 +668,22 @@
             
             .sidebar-subtitle {
                 font-size: 1em;                     /* Aumenta subtítulo del sidebar */
-            }    
+            }
+
+            /* Aumentar datos de contacto en móvil */
+            .contact-item {
+                font-size: 17px;                    /* Aumenta texto base */
+            }
+            
+            .contact-item strong {
+                font-size: 19px;                    /* Aumenta etiquetas (Email, Teléfono, etc.) */
+                font-weight: 600;
+            }
+            
+            .contact-item div {
+                font-size: 17px;                    /* Aumenta los datos específicos */
+                line-height: 1.4;
+            }
         }
 
         @media (max-width: 768px) {
@@ -767,6 +782,20 @@
             .contact-item strong {
                 font-size: 18px;                    /* Etiquetas más grandes */
             }
+
+            .contact-item {
+                font-size: 18px;                    /* Más grande en móvil */
+            }
+            
+            .contact-item strong {
+                font-size: 20px;                    /* Etiquetas más grandes */
+                font-weight: 600;
+            }
+            
+            .contact-item div {
+                font-size: 18px;                    /* Datos más grandes */
+                line-height: 1.4;
+            }
             
         }
 
@@ -854,6 +883,21 @@
             
             .contact-item strong {
                 font-size: 19px;
+            }
+
+            /* Aumentar datos de contacto en móviles pequeños */
+            .contact-item {
+                font-size: 19px;                    /* Máximo tamaño legible */
+            }
+            
+            .contact-item strong {
+                font-size: 21px;                    /* Etiquetas muy grandes */
+                font-weight: 600;
+            }
+            
+            .contact-item div {
+                font-size: 19px;                    /* Datos muy grandes */
+                line-height: 1.4;
             }
             
         }
