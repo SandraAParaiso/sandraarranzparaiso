@@ -662,6 +662,59 @@
                 padding: 10px 15px;
                 font-size: 0.9em;
             }
+
+                    /* Control de overflow de textos */
+        * {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        /* Contenedores principales */
+        .main-content, .content-section, .card, .bio-text {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Textos largos específicos */
+        .bio-text p, .publication-item h4, .publication-item p {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+        
+        /* Enlaces largos */
+        a, .social-link {
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+        
+        /* Títulos largos */
+        h1, h2, h3, h4, h5, h6 {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        /* Responsive adicional para móvil */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 1.8em;         /* Reduce tamaño en móvil */
+                line-height: 1.2;
+            }
+            
+            .section-title {
+                font-size: 1.6em;         /* Reduce tamaño en móvil */
+                line-height: 1.3;
+            }
+            
+            .publication-item h4 {
+                font-size: 1em;           /* Reduce tamaño de títulos de publicaciones */
+                line-height: 1.4;
+            }
+
+
+            
         }
     </style>
 </head>
