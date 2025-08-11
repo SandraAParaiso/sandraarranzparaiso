@@ -650,7 +650,8 @@
             }
             
             .card {
-                padding: 20px;
+                padding: 20px 15px;                   /* Reduce el padding de las tarjetas */
+                margin-bottom: 15px;                  /* Reduce el margen entre tarjetas */
             }
             
             .profile-section {
@@ -663,41 +664,27 @@
                 font-size: 0.9em;
             }
 
-                    /* Control de overflow de textos */
-        * {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            hyphens: auto;
-        }
-        
-        /* Contenedores principales */
-        .main-content, .content-section, .card, .bio-text {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-        
-        /* Textos largos específicos */
-        .bio-text p, .publication-item h4, .publication-item p {
-            word-break: break-word;
-            overflow-wrap: break-word;
-            max-width: 100%;
-        }
-        
-        /* Enlaces largos */
-        a, .social-link {
-            word-break: break-all;
-            overflow-wrap: break-word;
-        }
-        
-        /* Títulos largos */
-        h1, h2, h3, h4, h5, h6 {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            hyphens: auto;
-        }
-        
-        /* Responsive adicional para móvil */
-        @media (max-width: 768px) {
+            /* Ajustes para la sección de logros */
+            .grid {
+                grid-template-columns: 1fr;           /* Una sola columna en móvil */
+                gap: 15px;                            /* Reduce el espacio entre tarjetas */
+            }
+            
+            .highlight-number {
+                font-size: 2.2em;                     /* Reduce el tamaño del número */
+                margin-bottom: 8px;                   /* Reduce el margen */
+            }
+            
+            .card h3 {
+                font-size: 1.1em;                     /* Reduce el tamaño del título */
+                margin-bottom: 10px;                  /* Reduce el margen */
+            }
+            
+            .card p {
+                font-size: 0.9em;                     /* Reduce el tamaño del texto */
+                line-height: 1.4;                     /* Ajusta la altura de línea */
+            }
+
             .main-title {
                 font-size: 1.8em;         /* Reduce tamaño en móvil */
                 line-height: 1.2;
@@ -713,8 +700,135 @@
                 line-height: 1.4;
             }
 
+            .mobile-menu-btn {
+                padding: 18px 22px;        /* Aumenta el padding */
+                font-size: 24px;           /* Aumenta el tamaño del ícono */
+            }
+        }
 
+        /* Para móviles muy pequeños */
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
             
+            .highlight-number {
+                font-size: 1.8em;                     /* Aún más pequeño */
+            }
+            
+            .card {
+                padding: 15px 10px;                   /* Padding mínimo */
+                margin-bottom: 10px;
+            }
+            
+            .card h3 {
+                font-size: 1em;
+            }
+            
+            .card p {
+                font-size: 0.85em;
+            }
+        }
+
+        /* Control de overflow de textos */
+        * {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Contenedores principales */
+        .main-content, .content-section, .card, .bio-text {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Textos largos específicos */
+        .bio-text p, .publication-item h4, .publication-item p {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+
+        /* Enlaces largos */
+        a, .social-link {
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+
+        /* Títulos largos */
+        h1, h2, h3, h4, h5, h6 {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Centrar elementos de contacto */
+        .contact-item {
+            display: flex;
+            flex-direction: column;       /* Cambia a columna */
+            align-items: center;          /* Centra horizontalmente */
+            justify-content: center;      /* Centra verticalmente */
+            text-align: center;           /* Centra el texto */
+            gap: 15px;
+            color: #555;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+        }
+
+        /* Mejorar selector de idioma */
+        .language-selector {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1002;
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Degradado llamativo */
+            border: 2px solid rgba(255,255,255,0.3);               /* Borde sutil */
+            border-radius: 8px;
+            padding: 12px 15px;        /* Más padding para mayor tamaño */
+            box-shadow: 0 4px 15px rgba(30, 60, 114, 0.4);
+            animation: pulse-language 3s infinite;                  /* Animación sutil */
+        }
+
+        .language-selector select {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;           /* Texto más grande */
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 15px;         /* Más espacio interno */
+            outline: none;
+        }
+
+        /* Animación sutil para llamar la atención */
+        @keyframes pulse-language {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Ajuste para la bio (texto largo) */
+        .bio-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;             /* Mejor legibilidad que justify */
+            color: #444;
+            max-width: 100%;              /* Asegura que no exceda */
+            overflow: hidden;             /* Oculta overflow */
+        }
+
+        .bio-text p {
+            margin-bottom: 20px;
+        }
+
+        .bio-text strong {
+            color: #1e3c72;
+            font-weight: 600;
         }
     </style>
 </head>
