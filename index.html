@@ -666,7 +666,7 @@
 
             /* Ajustes para la sección de logros */
             .grid {
-                grid-template-columns: 1fr;           /* Una sola columna en móvil */
+                grid-template-columns: repeat(2, 1fr);           /* Una sola columna en móvil */
                 gap: 15px;                            /* Reduce el espacio entre tarjetas */
             }
             
@@ -709,7 +709,7 @@
         /* Para móviles muy pequeños */
         @media (max-width: 480px) {
             .grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
             
